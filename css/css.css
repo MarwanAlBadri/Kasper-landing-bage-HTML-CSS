@@ -1,0 +1,140 @@
+/* start variables */
+    :root{
+        --main_color:#19C8FA;
+
+    }
+/* end variables */
+/* start global rules */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family:  "Open Sans", sans-serif;
+    background-color: black;
+}
+
+.container{
+    padding: 0 15px 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width:768px){
+    .container{
+        width: 700px;
+    }
+}
+
+
+/* medium */
+@media (min-width:992px){
+    .container{
+        width: 900px;
+    }
+}
+
+/* large */
+@media (min-width:1200px){
+    .container{
+        width: 1100px;
+    }
+}
+/* end global rules */
+
+/* start header */
+header{
+    /* background-image: url(../image/landing.jpg); */
+    filter: brightness();
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+header .container::after{
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    bottom: 0;
+    left: 15px;
+    background-color: #a7a7a7;
+}
+
+header .container .logo a img{
+    height: 40px;
+}
+
+header .container nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header .container nav .toggle-menu{
+    font-size: 22px;
+    color: white;
+}
+@media(min-width:768px){
+    header .container nav .toggle-menu{
+        display: none;
+    }
+}
+header .container nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    
+}
+@media(max-width:768px){
+    header .container nav ul{
+        display: none;
+    }
+}
+header .container nav ul .active,
+header .container nav ul a:hover {
+    color: var(--main_color);
+    border-bottom: 1px solid var(--main_color);
+}
+header .container nav ul a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 40px 10px;
+    position: relative;
+    z-index: 2;
+
+}
+
+header .container nav .form {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    border-left: 1px solid white;
+}
+header .container nav .form i{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    &:hover{
+        color: var(--main_color);
+    }
+}
+/* end header */
