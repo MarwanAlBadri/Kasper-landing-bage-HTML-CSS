@@ -1,7 +1,7 @@
 /* start variables */
     :root{
         --main_color:#19C8FA;
-
+        --section-padding:100px;
     }
 /* end variables */
 /* start global rules */
@@ -12,10 +12,11 @@
 }
 html{
     scroll-behavior: smooth;
+
 }
 body{
     font-family:  "Open Sans", sans-serif;
-    background-color: black;
+    
 }
 
 .container{
@@ -45,12 +46,54 @@ body{
     }
 }
 /* end global rules */
+/* start components */
+.heading{
+    text-align: center;
+}
+.heading h2::before{
+    content:" ";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid black;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -38px;
+    background-color: white;
+    z-index: 2;
+}
+.heading h2 {
+    display: inline-block;
+    color: black;
+    position: relative;
+    margin-bottom: 70px;
+    font-size: 40px;
+    font-weight: normal;
+}
+.heading h2::after {
+    content:" ";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    bottom:-30px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.heading p{
+    max-width: 100%;
+    width: 500px;
+    margin: 0 auto 100px;
+}
+/* end components */
 
 /* start header */
 header{
     position: absolute;
     left: 0;
     width: 100%;
+    z-index: 2;
 }
 header .container{
     display: flex;
@@ -155,3 +198,144 @@ header .container nav .form i{
     }
 }
 /* end header */
+/* start landing */
+.landing{
+    min-height: 100vh;
+    background-image: url(../image/landing.jpg);
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+.landing .text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#126983b4 ;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width:768px) {
+    .landing .text{
+        width: 100%;
+        justify-content: center;
+        
+    }   
+}
+
+.landing .text .content{
+    width: 75%;
+}
+.landing .text .content h1{
+    color: white;
+    line-height: 1.6;
+    font-size: 24px;
+}
+.landing .text .content p{
+    color: white;
+    line-height: 1.9;
+    font-size: 14px;
+}
+@media (max-width:1024px) {
+    .landing .text .content h1{
+        font-size: 20px;
+    }
+    .landing .text .content p{
+        font-size: 12px ;
+    }
+    
+}
+
+.landing i:nth-of-type(1){
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: 0.3s;
+}
+.landing i:nth-of-type(2){
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: 0.3s;
+}
+.landing i:hover{
+    color: var(--main_color);
+    cursor: pointer;
+}
+.landing .bullets{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    list-style: none;
+
+}
+.landing .bullets li{
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.landing .bullets li.active{
+    background-color: var(--main_color);
+}
+/* end landing */
+/* start services */
+.services{
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+}
+
+@media(min-width:768px){
+    .services .services-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(450px,1fr));
+        row-gap: 40px;
+        column-gap: 80px;
+    }
+}
+.services .service {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+@media(max-width:767px){
+    .services .service {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+.services .service h3{
+    color: var(--main_color);
+    margin-bottom: 20px;
+}
+.services .service p{
+    line-height: 1.8;
+
+}
+/* end services */
