@@ -49,6 +49,7 @@ body{
 /* start components */
 .heading{
     text-align: center;
+    
 }
 .heading h2::before{
     content:" ";
@@ -420,5 +421,90 @@ header .container nav .form i{
 }
 /* end future section */
 /* start Portfolio section */
+.portfolio{
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+    
+}
 
+.portfolio ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+.portfolio ul li{
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: capitalize;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+.portfolio ul li.active,
+.portfolio ul li:hover{
+    background-color: var(--main_color);
+    color: white;
+}
+.portfolio .portfolio-content{
+    display:flex;
+    flex-wrap: wrap;
+}
+.portfolio .portfolio-content figure{
+    width: calc(100% / 4);
+    overflow: hidden;
+    position: relative;
+}
+@media (max-width:768px) {
+    .portfolio .portfolio-content figure{
+        width: calc(100% / 2);
+    }
+}
+@media (max-width:425px) {
+    .portfolio .portfolio-content figure{
+        width: 100%;
+    }
+}
+.portfolio .portfolio-content figure img{
+    width: 100%;
+    transition: 0.3s;
+
+}
+.portfolio .portfolio-content figure:hover img{
+    transform: scale(1.1) rotate(5deg);
+}
+.portfolio .portfolio-content figure .slider{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    padding: 20px;
+    transition: 0.3s;
+    background-color: white;
+    width: 100%;
+}
+.portfolio .portfolio-content figure:hover .slider{
+    bottom: 0;
+}
+.portfolio .portfolio-content figure .slider p:nth-of-type(1){
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.portfolio .portfolio-content figure .slider p:nth-of-type(2){
+    font-size: 14px;
+    color: var(--main_color);
+}
+.portfolio button{
+    margin: 50px auto ;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: var(--main_color);
+    color: white;
+    border: none;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
 /* end Portfolio section */
