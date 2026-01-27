@@ -338,4 +338,87 @@ header .container nav .form i{
     line-height: 1.8;
 
 }
-/* end services */
+/* end services section */
+/* start future section */
+.future{
+    position: relative;
+    background-image: url(../image/design-features.jpg);
+    background-size: cover;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.future .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+
+.future  figure{
+    position: absolute;
+    left: 25%;
+    bottom: -60px;
+    transform: translateX(-50%);
+}
+@media(max-width:768px){
+    .future  figure{
+        display: none;
+    }
+}
+
+.future .text{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#126983b4 ;
+    width: 50%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+@media (max-width:768px) {
+    .future .text{
+        width: 100%;
+        justify-content: center;
+        
+    }   
+}
+
+.future .text .content{
+    width: 75%;
+}
+.future .text .content h1{
+    color: white;
+    line-height: 1.6;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.future .text .content ul{
+    list-style: none;
+    margin-top: 40px;
+}
+.future .text .content ul li{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+.future .text .content ul li i ,
+.future .text .content ul li p{
+    color: white;
+    font-size: 17px;
+}
+
+@media (max-width:1024px) {
+    .future .text .content h1{
+        font-size: 20px;
+    }
+}
+/* end future section */
+/* start Portfolio section */
+
+/* end Portfolio section */
